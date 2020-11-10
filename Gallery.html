@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<button type="button" style="width: 100px; height: 100px; position:absolute;left:500px;bottom: 550px;" id="prevButton" onclick="prevClicked();">Prev</button>
+<button type="button" style="width: 100px; height: 100px; position:absolute;right:500px;bottom: 550px;" id="nextButton" onclick="nextClicked();">Next</button>
+<div style="text-align: center; margin-top: 200px;">    
+    <h1 style="font-size:large;">Pictures of Code</h1>
+    <figure>
+        <img src="Capture.PNG" alt="Quad Tree Representation" width="500" height="500" id="pictureBox">
+        <figcaption>Here is My Quad Tree</figcaption>
+    </figure>
+</div>
+
+<script>
+    let arr = ["Capture.PNG", "FlappyBird.JPG", "RayCasting.PNG"];
+    let pictureBox = document.getElementById("pictureBox");
+    let count = 0;
+
+    function prevClicked()
+    {
+        count--;
+        if (count < 0)
+        {
+            count = 2;
+        }
+
+        pictureBox.src = arr[count];
+    }
+
+    function nextClicked()
+    {
+        count++;
+        if (count > 2)
+        {
+            count = 0;
+        }
+        pictureBox.src = arr[count];
+    }
+
+</script>
+
+</html>
